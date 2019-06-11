@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!--
+		如果不指定id,容器会为它分配一个id,但绝不是类名首字母小写
+		通过ioc的 getBeanDefinitionNames方法,看到了分配的名字
+		是com.wzj.bean.Person#0 
+	 -->
+	<bean id="person" class="com.wzj.bean.Person">
+		<property name="name" value="wzj"></property>
+		<property name="age" value="22"></property>
+	</bean>
+</beans>
