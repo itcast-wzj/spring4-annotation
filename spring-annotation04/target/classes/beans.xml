@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!--
+		组件的作用域默认就是 scope = singleton 的时候
+		容器一创建就会去初始化(通过构造器去看,不要通过getBeanDefinitionNames()去看)
+		
+		那可不可以也让他调用方法获取对象的时候才创建对象?
+		懒加载: 容器启动时不创建对象, 第一次获取bean的时候,创建并初始化(只针对singleton)
+		答案是可以: 使用懒加载: lazy-init="true"
+	  -->
+	<bean id="person" class="com.wzj.bean.Person" scope="singleton" lazy-init="true">
+	
+	</bean>
+</beans>
