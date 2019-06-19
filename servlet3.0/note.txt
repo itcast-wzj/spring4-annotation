@@ -10,3 +10,19 @@ Shared libraries(共享库)  /  runtimes pluggability(运行时插件能力)
 总结: 容器在启动应用的时候, 会扫描当前应用里每一个jar包里面
 META-INF/services/javax.servlet.ServletContainerInitializer
 指定的实现类, 启动并运行这个实现类的方法 
+
+三种方式注册web组件: 以servlet为例
+1.在web.xml 配置
+<servlet>
+	<servlet-name>A</servlet-name>
+	<servlet-class>XXX</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>A</servlet-name>
+	<servlet-class>/a.jsp</servlet-class>
+</servlet-mapping>
+
+2.servlet3.0后的注册方式
+@WebServlet("/a.jsp")
+
+3.然后就是该案例中的java编码方式了
